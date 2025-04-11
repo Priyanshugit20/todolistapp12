@@ -106,3 +106,4 @@ taskquest/
 - `GET /api/categories/:id` - Get a specific category
 - `PATCH /api/categories/:id` - Update a category
 - `DELETE /api/categories/:id` - Delete a category
+```
