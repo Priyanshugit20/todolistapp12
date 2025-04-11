@@ -68,14 +68,14 @@ const TaskList = () => {
         
         <div className="flex gap-2 w-full sm:w-auto">
           <Select
-            value={categoryFilter || ""}
-            onValueChange={(value) => setCategoryFilter(value || null)}
+            value={categoryFilter || "all"}
+            onValueChange={(value) => setCategoryFilter(value === "all" ? null : value)}
           >
             <SelectTrigger className="w-full sm:w-[150px]">
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Categories</SelectItem>
+              <SelectItem value="all">All Categories</SelectItem>
               {categories.map((category) => (
                 <SelectItem key={category.id} value={category.id}>
                   {category.name}
@@ -85,14 +85,14 @@ const TaskList = () => {
           </Select>
           
           <Select
-            value={statusFilter || ""}
-            onValueChange={(value) => setStatusFilter(value || null)}
+            value={statusFilter || "all"}
+            onValueChange={(value) => setStatusFilter(value === "all" ? null : value)}
           >
             <SelectTrigger className="w-full sm:w-[150px]">
               <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Statuses</SelectItem>
+              <SelectItem value="all">All Statuses</SelectItem>
               <SelectItem value="pending">Pending</SelectItem>
               <SelectItem value="completed">Completed</SelectItem>
             </SelectContent>
